@@ -1,0 +1,72 @@
+---
+import type { Web } from "../types/web";
+import CodeIcon from "./icons/Code.astro";
+
+const webs: Web[] = [
+  {
+    title: "Project",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur libero in ex euismod vestibulum.",
+    image: "https://via.placeholder.com/300",
+    altImage: "",
+    url: "",
+  },
+  {
+    title: "Project",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur libero in ex euismod vestibulum.",
+    image: "https://via.placeholder.com/300",
+    altImage: "",
+    url: "",
+  },
+  {
+    title: "Project",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur libero in ex euismod vestibulum.",
+    image: "https://via.placeholder.com/300",
+    altImage: "",
+    url: "",
+  },
+];
+---
+
+<section id="webs" class="px-2 sm:px-5 mb-20 scroll-m-20 max-w-7xl mx-auto">
+  <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80"
+  >
+    <CodeIcon class="size-7" />
+    Webs
+  </h2>
+  <div class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-14">
+    {
+      webs.map(({ title, description, url, image, altImage }) => (
+        <a
+          href={url}
+          class="relative flex flex-col group h-100 rounded-2xl transition-transform duration-700 hover:scale-[1.02] will-change-transform"
+        >
+          <div class="w-full h-full flex flex-col gap-3">
+            <div class="overflow-hidden rounded-xl h-48 md:h-36">
+              <picture>
+                <img
+                  src={image}
+                  alt={altImage}
+                  class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
+            </div>
+
+            <div class="divide-y divide-transparent">
+              <h3 class="text-base font-semibold tracking-tight text-neutral-900 line-clamp-2">
+                {title}
+              </h3>
+
+              <p class="text-sm text-neutral-900">{description}</p>
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,67 @@
+---
+import type { Project } from "../types/project";
+import GitHub from "./icons/GitHub.astro";
+
+interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<article
+  class="relative cursor-pointer flex flex-col rounded-xl overflow-hidden bg-gray-100 transition duration-500 ease-in-out transform hover:shadow-lg group"
+>
+  <div
+    class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+  >
+    {
+      project.githubLink && (
+        <a
+          target="_blank"
+          href={project.githubLink}
+          role="link"
+          class="inline-flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-black transition duration-300 transform hover:scale-110 hover:-rotate-12 will-change-transform"
+        >
+          <GitHub class="size-6" />
+        </a>
+      )
+    }
+  </div>
+  <a href={project.url} target="_blank" rel="noopener noreferrer">
+    <div class="w-full">
+      <img
+        alt=""
+        class="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
+        loading="lazy"
+        src={project.image}
+      />
+    </div>
+    <div class="p-5">
+      <h3 class="text-2xl font-bold text-gray-800">
+        {project.title}
+      </h3>
+
+      <div class="mt-2 text-gray-700">
+        {project.description}
+      </div>
+
+      <footer class="flex flex-wrap mt-2">
+        <ul class="flex flex-row mb-2 gap-x-2">
+          {
+            project.tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                >
+                  <tag.icon class="w-4 h-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))
+          }
+        </ul>
+      </footer>
+    </div>
+  </a>
+</article>

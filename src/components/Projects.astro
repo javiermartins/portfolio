@@ -1,0 +1,19 @@
+---
+import projectsData from "../data/projects";
+import CodeIcon from "./icons/Code.astro";
+import ProjectCard from "./ProjectCard.astro";
+
+const projects = projectsData;
+---
+
+<section id="projects" class="px-2 sm:px-5 mb-20 scroll-m-20 max-w-7xl mx-auto">
+  <h2
+    class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80"
+  >
+    <CodeIcon class="size-7" />
+    Proyectos
+  </h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</section>
