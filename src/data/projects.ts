@@ -1,5 +1,5 @@
 import GitHub from "../components/icons/GitHub.astro";
-import type { Project, Tag } from "../types/project";
+import type { Project } from "../types/project";
 
 
 const TAGS: any = {
