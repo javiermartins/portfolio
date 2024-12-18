@@ -4,7 +4,7 @@ export interface Project {
     title: string
     description: string,
     url: string,
-    githubLink: string,
+    githubLink?: string,
     image: string,
     tags: any[]
 }

@@ -10,7 +10,7 @@ const webs: Web[] = [
         url: "https://electricidadtecman.netlify.app/",
     },
     {
-        title: "Astro Fisio",
+        title: "AstroFisio",
         description:
             "AstroFisio es un tema moderno y responsivo para clínicas de fisioterapia, con secciones de servicios, precios, horarios y blog para una navegación ágil y accesible.",
         image: "img/webs/astro_fisio.webp",
