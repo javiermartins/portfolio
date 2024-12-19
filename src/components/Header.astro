@@ -1,4 +1,8 @@
 ---
+import GitHub from "./icons/GitHub.astro";
+import Translate from "./icons/Translate.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+
 const navItems = [
   {
     title: "Proyectos",
@@ -19,17 +23,31 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 py-2 flex items-center justify-center w-full mx-auto mt-2"
+  class="fixed top-0 z-10 flex items-center justify-center w-full px-4 sm:px-9 bg-white dark:bg-primary-dark"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-500 justify-center items-center bg-white shadow-md"
+    class="flex w-full py-4 max-w-7xl text-sm font-medium text-gray-500 dark:text-white justify-center items-center"
   >
-    <ul class="flex font-medium flex-row lg:space-x-4 lg:mt-0">
+    <ul class="flex flex-row items-center font-medium gap-2 lg:mt-0">
+      <li
+        class="text-gray-800 dark:text-white transition-all duration-200 ease-in-out hover:scale-100 hover:-rotate-12 scale-90"
+      >
+        <a
+          href="https://github.com/javiermartins"
+          target="_blank"
+          class=""
+          aria-label="Github javiermartins"
+        >
+          <GitHub class="size-7" />
+        </a>
+      </li>
+    </ul>
+    <ul class="flex font-medium flex-row gap-2 lg:gap-4 lg:mt-0 fixed">
       {
         navItems.map((link) => (
           <li>
             <a
-              class="relative block px-2 py-2 transition hover:text-gray-950"
+              class="relative block px-2 py-2 transition hover:text-gray-950 dark:hover:text-gray-300"
               aria-label={link.label}
               href={link.url}
             >
@@ -38,6 +56,18 @@ const navItems = [
           </li>
         ))
       }
+    </ul>
+    <ul class="flex flex-row items-center font-medium gap-2 lg:mt-0 ml-auto">
+      <li
+        class="text-gray-800 dark:text-white transition-all duration-200 ease-in-out hover:scale-100 scale-90"
+      >
+        <button aria-label="" class="flex">
+          <Translate class="size-7" />
+        </button>
+      </li>
+      <li class="text-gray-800 dark:text-white">
+        <ThemeToggle />
+      </li>
     </ul>
   </nav>
 </header>
