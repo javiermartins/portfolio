@@ -17,13 +17,18 @@ import { ClientRouter } from "astro:transitions";
   </body>
 </html>
 
-<style>
+<style is:global>
   :root {
     color-scheme: light dark;
   }
 
+  @font-face {
+    font-family: "Mulish";
+    src: url("/fonts/Mulish_variable.ttf") format("truetype");
+  }
+
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Mulish", system-ui, sans-serif;
     scroll-behavior: smooth;
   }
 

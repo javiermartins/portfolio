@@ -63,7 +63,7 @@ const PROJECTS: Project[] = [
         description:
             "Tastime es una app educativa que integra horario y tareas en una sola herramienta, con personalización, exportación y control total de tu organización académica.",
         url: "https://play.google.com/store/apps/details?id=com.amstroop.tastime",
-        image: "https://via.placeholder.com/300",
+        image: "img/projects/tastime.webp",
         tags: [TAGS.ANGULAR, TAGS.IONIC],
     },
 ];

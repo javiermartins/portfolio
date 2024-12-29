@@ -10,7 +10,7 @@ const { project } = Astro.props;
 ---
 
 <article
-  class="relative cursor-pointer flex flex-col rounded-xl overflow-hidden bg-gray-100 dark:bg-secondary-dark transition duration-500 ease-in-out transform hover:shadow-lg group"
+  class="relative cursor-pointer flex flex-col bg-gray-100 rounded-xl dark:bg-secondary-dark transition duration-500 ease-in-out transform hover:shadow-lg group"
 >
   <div
     class="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
@@ -34,7 +34,7 @@ const { project } = Astro.props;
     rel="noopener noreferrer"
     class="flex flex-col h-full"
   >
-    <div class="w-full">
+    <div class="w-full h-full rounded-t-xl overflow-hidden">
       <img
         alt=""
         class="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
@@ -55,9 +55,12 @@ const { project } = Astro.props;
         <ul class="flex flex-row mb-2 gap-x-2">
           {
             project.tags.map((tag) => (
-              <li>
+              <li class="tags">
                 <span class="flex justify-center items-center p-2 grayscale hover:grayscale-0 transition duration-300 select-none bg-gray-300 rounded-full">
                   <tag.icon class="size-7" />
+                </span>
+                <span class="tooltip-tag text-white bg-primary">
+                  {tag.name}
                 </span>
               </li>
             ))
@@ -67,3 +70,44 @@ const { project } = Astro.props;
     </div>
   </a>
 </article>
+
+<style>
+  .tags {
+    position: relative;
+    display: inline-block;
+  }
+
+  .tags .tooltip-tag {
+    text-wrap: nowrap;
+    text-align: center;
+    border-radius: 10px;
+    padding: 5px 25px;
+    position: absolute;
+    z-index: 1000;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+    opacity: 0;
+    transition:
+      opacity 1s ease,
+      transform 1s ease;
+  }
+
+  .tooltip-tag::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent theme("colors.primary") transparent;
+  }
+
+  .tags:hover .tooltip-tag {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+</style>
