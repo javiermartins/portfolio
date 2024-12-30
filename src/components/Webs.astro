@@ -3,6 +3,11 @@ import type { Web } from "../types/web";
 import CodeIcon from "./icons/Code.astro";
 import websData from "../data/webs";
 
+import { getI18N } from "../i18n/";
+
+const { currentLocale } = Astro;
+const translate: any = getI18N({ currentLocale });
+
 const webs: Web[] = websData;
 ---
 
@@ -11,43 +16,48 @@ const webs: Web[] = websData;
     class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-gray-200"
   >
     <CodeIcon class="size-7" />
-    Webs
+    {translate.COMMON.WEBS}
   </h2>
   <div
     class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-14"
   >
     {
-      webs.map(({ title, description, url, image, altImage }) => (
-        <a
-          href={url}
-          target="_blank"
-          class="relative flex flex-col group h-100 rounded-2xl transition-transform duration-700 hover:scale-[1.02] will-change-transform"
-        >
-          <div class="w-full h-full flex flex-col gap-3">
-            <div class="overflow-hidden rounded-xl max-h-64 md:max-h-56 aspect-[3/2]">
-              <picture>
-                <img
-                  src={image}
-                  alt={altImage}
-                  class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </picture>
-            </div>
+      webs.map(({ title, description, url, image, altImage }) => {
+        const [namespace, key] = description.split(".");
+        const webDescription = translate[namespace][key];
 
-            <div class="divide-y divide-transparent">
-              <h3 class="text-base font-bold tracking-tight text-neutral-900 dark:text-gray-200 line-clamp-2">
-                {title}
-              </h3>
+        return (
+          <a
+            href={url}
+            target="_blank"
+            class="relative flex flex-col group h-100 rounded-2xl transition-transform duration-700 hover:scale-[1.02] will-change-transform"
+          >
+            <div class="w-full h-full flex flex-col gap-3">
+              <div class="overflow-hidden rounded-xl max-h-64 md:max-h-56 aspect-[3/2]">
+                <picture>
+                  <img
+                    src={image}
+                    alt={altImage}
+                    class="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
 
-              <p class="text-sm mt-1 text-neutral-900 dark:text-gray-400">
-                {description}
-              </p>
+              <div class="divide-y divide-transparent">
+                <h3 class="text-base font-bold tracking-tight text-neutral-900 dark:text-gray-200 line-clamp-2">
+                  {title}
+                </h3>
+
+                <p class="text-sm mt-1 text-neutral-900 dark:text-gray-400">
+                  {webDescription}
+                </p>
+              </div>
             </div>
-          </div>
-        </a>
-      ))
+          </a>
+        );
+      })
     }
   </div>
 </section>

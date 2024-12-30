@@ -1,15 +1,15 @@
 import type { AstroComponentFactory } from "astro/runtime/server/index.js";
 
 export interface Project {
-    title: string
-    description: string,
-    url: string,
-    githubLink?: string,
-    image: string,
-    tags: any[]
+    title: string;
+    description: string;
+    url: string;
+    githubLink?: string;
+    image: string;
+    tags: any[];
 }
 
 export interface Tag {
-    name: string,
+    name: string;
     icon: AstroComponentFactory;
 }

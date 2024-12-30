@@ -1,0 +1,26 @@
+{
+    "COMMON": {
+        "PROJECTS": "Proyectos",
+        "WEBS": "Webs",
+        "CONTACT": "Contacto"
+    },
+    "HERO": {
+        "ROL": "Desarrollador Full Stack",
+        "DESCRIPTION": "+3 años de experiencia, con conocimientos sólidos en el framework Angular, maquetación y diseño responsivo. Además, realizo paginas web con el framework astro.",
+        "CONTACTME": "Contáctame"
+    },
+    "PROJECTS": {
+        "ORDODESC": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur libero in ex euismod vestibulum.",
+        "CUTLYNKDESC": "Cutlynk es un acortador de URL rápido y seguro que convierte enlaces largos en cortos de forma sencilla, con una interfaz amigable y protección de datos.",
+        "TASTTIMEDESC": "Tastime es una app educativa que integra horario y tareas en una sola herramienta, con personalización, exportación y control total de tu organización académica."
+    },
+    "WEBS": {
+        "TECMANDESC": "Web moderna y responsiva para Electricidad Tecman, con secciones de instalaciones eléctricas, reparación de aires y telecomunicaciones, destacando calidad y eficiencia.",
+        "ASTROFISIODESC": "AstroFisio es un tema moderno y responsivo para clínicas de fisioterapia, con secciones de servicios, precios, horarios y blog para una navegación ágil y accesible.",
+        "ASTROCOFFEEDESC": "Astro Coffee es un sitio web que simula la experiencia de navegación de una tienda de café y bar, con un diseño moderno, atractivo y funcional."
+    },
+    "LANGUAGES": {
+        "ENGLISH": "Inglés",
+        "SPANISH": "Español"
+    }
+}

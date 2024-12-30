@@ -3,6 +3,11 @@ import projectsData from "../data/projects";
 import CodeIcon from "./icons/Code.astro";
 import ProjectCard from "./ProjectCard.astro";
 
+import { getI18N } from "../i18n/";
+
+const { currentLocale } = Astro;
+const translate: any = getI18N({ currentLocale });
+
 const projects = projectsData;
 ---
 
@@ -11,7 +16,7 @@ const projects = projectsData;
     class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-gray-200"
   >
     <CodeIcon class="size-7" />
-    Proyectos
+    {translate.COMMON.PROJECTS}
   </h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {projects.map((project) => <ProjectCard project={project} />)}

@@ -1,23 +1,27 @@
 ---
 import GitHub from "./icons/GitHub.astro";
-import Translate from "./icons/Translate.astro";
 import ThemeToggle from "./ThemeToggle.astro";
+
+import { getI18N } from "../i18n/";
+import LanguageSelector from "./LanguageSelector.astro";
+
+const { currentLocale } = Astro;
+const translate = getI18N({ currentLocale });
+
+const baseUrl = Astro.site;
 
 const navItems = [
   {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#projects",
+    title: translate.COMMON.PROJECTS,
+    url: "#projects",
   },
   {
-    title: "Webs",
-    label: "webs",
-    url: "/#webs",
+    title: translate.COMMON.WEBS,
+    url: "#webs",
   },
   {
-    title: "Contacto",
-    label: "contacto",
-    url: "/#contact",
+    title: translate.COMMON.CONTACT,
+    url: "#contact",
   },
 ];
 ---
@@ -48,7 +52,7 @@ const navItems = [
           <li>
             <a
               class="relative block px-2 py-2 transition hover:text-gray-950 dark:hover:text-gray-300"
-              aria-label={link.label}
+              aria-label={link.title}
               href={link.url}
             >
               {link.title}
@@ -58,12 +62,8 @@ const navItems = [
       }
     </ul>
     <ul class="flex flex-row items-center font-medium gap-2 lg:mt-0 ml-auto">
-      <li
-        class="text-gray-800 dark:text-white transition-all duration-300 ease-in-out hover:scale-100 scale-90"
-      >
-        <button aria-label="" class="flex">
-          <Translate class="size-7" />
-        </button>
+      <li class="text-gray-800 dark:text-white">
+        <LanguageSelector />
       </li>
       <li class="text-gray-800 dark:text-white">
         <ThemeToggle />

@@ -1,6 +1,11 @@
 ---
 import Email from "./icons/Email.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
+
+import { getI18N } from "../i18n/";
+
+const { currentLocale } = Astro;
+const translate = getI18N({ currentLocale });
 ---
 
 <section
@@ -17,15 +22,13 @@ import LinkedIn from "./icons/LinkedIn.astro";
     <header>
       <div class="flex flex-col">
         <h1 class="text-5xl font-bold">Javier Martín Serrano</h1>
-        <h2 class="text-2xl font-medium">Desarrollador Full Stack</h2>
+        <h2 class="text-2xl font-medium">{translate.HERO.ROL}</h2>
       </div>
     </header>
 
     <div class="pt-6 max-w-[600px]">
       <p class="text-pretty text-lg">
-        +3 años de experiencia, con conocimientos sólidos en el framework
-        Angular, maquetación y diseño responsivo. Además, realizo paginas web
-        con el framework astro.
+        {translate.HERO.DESCRIPTION}
       </p>
 
       <footer
@@ -36,7 +39,7 @@ import LinkedIn from "./icons/LinkedIn.astro";
           class="bg-primary dark:bg-secondary-dark text-white rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
         >
           <Email class="size-5" />
-          Contáctame
+          {translate.HERO.CONTACTME}
         </a>
         <a
           href="https://www.linkedin.com/in/javier-martin-serrano/"
