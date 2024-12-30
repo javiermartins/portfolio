@@ -20,7 +20,7 @@ const languages = languagesData;
 
   <div
     id="translate-menu"
-    class="absolute hidden scale-80 top-full right-0 mt-1 text-sm p-1 min-w-[8rem] rounded-md bg-white/90 dark:bg-secondary-dark shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+    class="absolute hidden scale-80 top-full right-0 mt-1 text-sm p-1 min-w-[6rem] rounded-md bg-white/90 dark:bg-secondary-dark shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
   >
     <ul>
       {
@@ -29,8 +29,14 @@ const languages = languagesData;
           const translateLanguage = translate[namespace][key];
 
           return (
-            <li class="translate-menu-option cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
-              <a href={language.value} class="block h-full w-full px-2 py-1.5">
+            <li
+              class="translate-menu-option cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
+              class:list={{
+                "font-extrabold bg-neutral-300/30":
+                  language.value === currentLocale,
+              }}
+            >
+              <a href={language.url} class="block h-full w-full px-2 py-1.5">
                 {translateLanguage}
               </a>
             </li>
