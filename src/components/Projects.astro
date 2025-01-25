@@ -2,8 +2,8 @@
 import projectsData from "../data/projects";
 import CodeIcon from "./icons/Code.astro";
 import ProjectCard from "./ProjectCard.astro";
-
 import { getI18N } from "../i18n/";
+import ArrowRight from "./icons/ArrowRight.astro";
 
 const { currentLocale } = Astro;
 const translate: any = getI18N({ currentLocale });
@@ -20,5 +20,15 @@ const projects = projectsData;
   </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+  <div class="mt-5">
+    <a
+      href="https://github.com/javiermartins?tab=repositories"
+      target="_blank"
+      class="group font-bold text-lg hover:opacity-60 transition-all duration-500 ease-in-out"
+    >
+      {translate.COMMON.OTHERPROJECTS}
+      <ArrowRight />
+    </a>
   </div>
 </section>

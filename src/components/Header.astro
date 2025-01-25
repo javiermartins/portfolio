@@ -19,10 +19,6 @@ const navItems = [
     title: translate.COMMON.WEBS,
     url: "#webs",
   },
-  {
-    title: translate.COMMON.CONTACT,
-    url: "#contact",
-  },
 ];
 ---
 
@@ -32,7 +28,7 @@ const navItems = [
   <nav
     class="flex w-full py-4 max-w-7xl text-sm font-medium text-gray-500 dark:text-white justify-center items-center"
   >
-    <ul class="flex flex-row items-center font-medium gap-2 lg:mt-0">
+    <ul class="flex flex-row items-center font-medium gap-2 lg:mt-0 z-10">
       <li
         class="text-gray-800 dark:text-white transition-all duration-200 ease-in-out hover:scale-100 hover:-rotate-12 scale-90"
       >
@@ -64,7 +60,7 @@ const navItems = [
       }
     </ul>
     <ul
-      class="flex flex-row items-center font-medium gap-0 sm:gap-2 lg:mt-0 ml-auto"
+      class="flex flex-row items-center font-medium gap-0 sm:gap-2 lg:mt-0 ml-auto z-10"
     >
       <li class="text-gray-800 dark:text-white">
         <LanguageSelector />

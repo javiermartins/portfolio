@@ -2,7 +2,8 @@
     "COMMON": {
         "PROJECTS": "Projects",
         "WEBS": "Websites",
-        "CONTACT": "Contact"
+        "CONTACT": "Contact",
+        "OTHERPROJECTS": "Other projects"
     },
     "HERO": {
         "ROL": "Full Stack Developer",
@@ -12,6 +13,7 @@
     "PROJECTS": {
         "ORDODESC": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam consectetur libero in ex euismod vestibulum.",
         "CUTLYNKDESC": "Cutlynk is a fast and secure URL shortener that easily converts long links into short ones, with a user-friendly interface and data protection.",
+        "FACTOSDESC": "Factos is a daily fun fact app built with Astro. Using AI, it provides surprising and fascinating facts every day, helping you expand your knowledge and spark your curiosity in a simple way.",
         "TASTTIMEDESC": "Tastime is an educational app that integrates scheduling and tasks into a single tool, offering customization, export options, and full control over your academic organization."
     },
     "WEBS": {
