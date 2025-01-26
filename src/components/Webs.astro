@@ -22,7 +22,7 @@ const webs: Web[] = websData;
     class="grid w-full grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-14"
   >
     {
-      webs.map(({ title, description, url, image, altImage }) => {
+      webs.map(({ title, description, url, image, altImage }, index) => {
         const [namespace, key] = description.split(".");
         const webDescription = translate[namespace][key];
 
@@ -31,6 +31,10 @@ const webs: Web[] = websData;
             href={url}
             target="_blank"
             class="relative flex flex-col group h-100 rounded-2xl transition-transform duration-700 hover:scale-[1.02] will-change-transform"
+            data-aos="zoom-in"
+            data-aos-delay={`${(webs.length + index) * 100}`}
+            data-aos-duration="600"
+            data-aos-offset="20"
           >
             <div class="w-full h-full flex flex-col gap-3">
               <div class="overflow-hidden rounded-xl max-h-64 md:max-h-56 aspect-[3/2]">

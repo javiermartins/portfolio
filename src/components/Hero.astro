@@ -1,7 +1,6 @@
 ---
 import Email from "./icons/Email.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
-
 import { getI18N } from "../i18n/";
 
 const { currentLocale } = Astro;
@@ -10,6 +9,8 @@ const translate = getI18N({ currentLocale });
 
 <section
   class="mt-36 mb-28 px-2 sm:px-5 flex flex-col md:flex-row justify-center items-center transition-all md:gap-4 lg:gap-24 xl:gap-40 animate-section"
+  data-aos="zoom-in"
+  data-aos-duration="500"
 >
   <img
     class="mb-12 md:m-5 rounded-full object-cover aspect-square size-56"
@@ -22,7 +23,7 @@ const translate = getI18N({ currentLocale });
     <header>
       <div class="flex flex-col text-center sm:text-left">
         <h1 class="text-3xl sm:text-5xl font-bold">Javier Martín Serrano</h1>
-        <h2 class="text-2xl font-medium">
+        <h2 class="text-2xl font-semibold text-yellow-500 dark:text-yellow-400">
           {translate.HERO.ROL}
         </h2>
       </div>

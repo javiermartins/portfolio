@@ -19,7 +19,18 @@ const projects = projectsData;
     {translate.COMMON.PROJECTS}
   </h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {projects.map((project) => <ProjectCard project={project} />)}
+    {
+      projects.map((project, index) => (
+        <article
+          class="relative cursor-pointer flex flex-col bg-gray-100 rounded-xl dark:bg-secondary-dark transition duration-500 ease-in-out transform hover:shadow-lg group"
+          data-aos="fade-down"
+          data-aos-delay={`${(projects.length + index) * 100}`}
+          data-aos-duration="800"
+        >
+          <ProjectCard project={project} />
+        </article>
+      ))
+    }
   </div>
   <div class="mt-5">
     <a

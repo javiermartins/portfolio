@@ -17,67 +17,61 @@ const [namespace, key] = project.description.split(".");
 const projectDescription = translate[namespace][key];
 ---
 
-<article
-  class="relative cursor-pointer flex flex-col bg-gray-100 rounded-xl dark:bg-secondary-dark transition duration-500 ease-in-out transform hover:shadow-lg group"
+<div
+  class="absolute top-4 right-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
 >
-  <div
-    class="absolute top-4 right-4 opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
-  >
-    {
-      project.githubLink && (
-        <a
-          target="_blank"
-          href={project.githubLink}
-          role="link"
-          class="inline-flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-black transition duration-300 transform hover:scale-110 hover:-rotate-12 will-change-transform"
-        >
-          <GitHub class="size-6" />
-        </a>
-      )
-    }
+  {
+    project.githubLink && (
+      <a
+        target="_blank"
+        href={project.githubLink}
+        role="link"
+        class="inline-flex items-center justify-center w-10 h-10 bg-gray-800 text-white rounded-full hover:bg-black transition duration-300 transform hover:scale-110 hover:-rotate-12 will-change-transform"
+      >
+        <GitHub class="size-6" />
+      </a>
+    )
+  }
+</div>
+<a
+  href={project.url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex flex-col h-full"
+>
+  <div class="w-full h-full rounded-t-xl overflow-hidden">
+    <img
+      alt=""
+      class="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
+      loading="lazy"
+      src={project.image}
+    />
   </div>
-  <a
-    href={project.url}
-    target="_blank"
-    rel="noopener noreferrer"
-    class="flex flex-col h-full"
-  >
-    <div class="w-full h-full rounded-t-xl overflow-hidden">
-      <img
-        alt=""
-        class="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
-        loading="lazy"
-        src={project.image}
-      />
-    </div>
-    <div class="p-5 flex flex-col h-full">
-      <h3 class="text-2xl font-bold text-gray-800 dark:text-white">
-        {project.title}
-      </h3>
+  <div class="p-5 flex flex-col h-full">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-white">
+      {project.title}
+    </h3>
 
-      <div class="mt-2 text-gray-700 flex-grow dark:text-gray-300">
-        {projectDescription}
-      </div>
-
-      <footer class="flex flex-wrap mt-4">
-        <ul class="flex flex-row mb-2 gap-x-2">
-          {
-            project.tags.map((tag) => (
-              <li class="tags">
-                <span class="flex justify-center items-center p-2 grayscale hover:grayscale-0 transition duration-300 select-none bg-gray-300 rounded-full">
-                  <tag.icon class="size-7" />
-                </span>
-                <span class="tooltip-tag text-white bg-primary">
-                  {tag.name}
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-      </footer>
+    <div class="mt-2 text-gray-700 flex-grow dark:text-gray-300">
+      {projectDescription}
     </div>
-  </a>
-</article>
+
+    <footer class="flex flex-wrap mt-4">
+      <ul class="flex flex-row mb-2 gap-x-2">
+        {
+          project.tags.map((tag) => (
+            <li class="tags">
+              <span class="flex justify-center items-center p-2 grayscale hover:grayscale-0 transition duration-300 select-none bg-gray-300 rounded-full">
+                <tag.icon class="size-7" />
+              </span>
+              <span class="tooltip-tag text-white bg-primary">{tag.name}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </footer>
+  </div>
+</a>
 
 <style>
   .tags {
