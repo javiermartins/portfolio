@@ -3,7 +3,10 @@
         "PROJECTS": "Projects",
         "WEBS": "Websites",
         "CONTACT": "Contact",
-        "OTHERPROJECTS": "Other projects"
+        "OTHERPROJECTS": "Other projects",
+        "CHANGETHEME": "Change theme",
+        "CHANGELANGUAGE": "Change language",
+        "GITHUBRESPOSITORY": "Github repository of"
     },
     "HERO": {
         "ROL": "Full Stack Developer",
