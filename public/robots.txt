@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://javiermartins.dev/sitemap-index.xml
