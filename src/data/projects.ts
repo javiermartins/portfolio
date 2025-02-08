@@ -62,7 +62,7 @@ const PROJECTS: Project[] = [
         description: "PROJECTS.CUTLYNKDESC",
         url: "https://cutlynk.dev",
         githubLink: "https://github.com/javiermartins/cutlynk",
-        image: "img/projects/cutlynk.webp",
+        image: "/img/projects/cutlynk.webp",
         tags: [TAGS.ANGULAR, TAGS.TAIGAUI, TAGS.APPWRITE, TAGS.TAILWIND],
     },
     {
@@ -70,14 +70,14 @@ const PROJECTS: Project[] = [
         description: "PROJECTS.FACTOSDESC",
         url: "https://factos.pages.dev/",
         githubLink: "https://github.com/javiermartins/factos",
-        image: "img/projects/factos.webp",
+        image: "/img/projects/factos.webp",
         tags: [TAGS.ASTRO, TAGS.CLOUDFLAREWORKERS, TAGS.TURSO, TAGS.TAILWIND],
     },
     {
         title: "Tastime",
         description: "PROJECTS.TASTTIMEDESC",
         url: "https://play.google.com/store/apps/details?id=com.amstroop.tastime",
-        image: "img/projects/tastime.webp",
+        image: "/img/projects/tastime.webp",
         tags: [TAGS.ANGULAR, TAGS.IONIC],
     },
 ];
