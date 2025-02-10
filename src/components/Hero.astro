@@ -7,53 +7,74 @@ const { currentLocale } = Astro;
 const translate = getI18N({ currentLocale });
 ---
 
-<section
-  class="mt-36 mb-28 px-2 sm:px-5 flex flex-col md:flex-row justify-center items-center transition-all md:gap-4 lg:gap-24 xl:gap-40 animate-section"
-  data-aos="zoom-in"
-  data-aos-duration="500"
->
-  <img
-    src="img/placeholder.webp"
-    alt="Javier Martín Serrano"
-    class="mb-12 md:m-5 rounded-full object-cover aspect-square size-56"
-    loading="eager"
-    fetchpriority="high"
-  />
+<section>
+  <div
+    class="pt-36 pb-24 px-2 mb-16 sm:px-5 flex flex-col md:flex-row justify-center items-center transition-all md:gap-4 lg:gap-24 xl:gap-40 animate-section"
+  >
+    <img
+      src="/img/placeholder.webp"
+      alt="Javier Martín Serrano"
+      class="mb-12 md:m-5 rounded-full object-cover aspect-square size-56"
+      loading="eager"
+      fetchpriority="high"
+      data-aos="zoom-in"
+      data-aos-duration="500"
+    />
 
-  <div>
-    <header>
-      <div class="flex flex-col text-center sm:text-left">
-        <h1 class="text-3xl sm:text-5xl font-bold">Javier Martín Serrano</h1>
-        <h2 class="text-2xl font-semibold text-amber-600 dark:text-yellow-400">
-          {translate.HERO.ROL}
-        </h2>
+    <div>
+      <header>
+        <div
+          class="flex flex-col text-center sm:text-left"
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          data-aos-duration="500"
+        >
+          <h1
+            class="text-[#273449] dark:text-white text-3xl sm:text-5xl font-bold"
+          >
+            Javier Martín Serrano
+          </h1>
+          <h2
+            class="text-2xl font-semibold text-yellow-500 dark:text-yellow-400"
+          >
+            {translate.HERO.ROL}
+          </h2>
+        </div>
+      </header>
+
+      <div class="pt-6 max-w-[600px]">
+        <p
+          class="text-pretty text-lg text-secondary dark:text-white"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+          data-aos-duration="500"
+        >
+          {translate.HERO.DESCRIPTION}
+        </p>
+
+        <footer
+          class="flex flex-wrap items-center gap-3 pt-8 justify-center md:justify-normal"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+          data-aos-duration="500"
+        >
+          <a
+            href="mailto:javiimartinserrano@gmail.com"
+            class="flex-1 md:flex-initial sm:w-auto justify-center bg-secondary dark:bg-secondary-dark text-white rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
+          >
+            <Email class="size-5" />
+            {translate.HERO.CONTACTME}
+          </a>
+          <a
+            href="https://www.linkedin.com/in/javier-martin-serrano/"
+            target="_blank"
+            class="flex-1 md:flex-initial sm:w-auto justify-center bg-white dark:bg-secondary-dark text-secondary dark:text-white border border-secondary rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
+          >
+            <LinkedIn class="size-5" />
+            LinkedIn
+          </a>
+        </footer>
       </div>
-    </header>
-
-    <div class="pt-6 max-w-[600px]">
-      <p class="text-pretty text-lg">
-        {translate.HERO.DESCRIPTION}
-      </p>
-
-      <footer
-        class="flex flex-wrap items-center gap-3 pt-8 justify-center md:justify-normal"
-      >
-        <a
-          href="mailto:javiimartinserrano@gmail.com"
-          class="flex-1 md:flex-initial sm:w-auto justify-center bg-primary dark:bg-secondary-dark text-white rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
-        >
-          <Email class="size-5" />
-          {translate.HERO.CONTACTME}
-        </a>
-        <a
-          href="https://www.linkedin.com/in/javier-martin-serrano/"
-          target="_blank"
-          class="flex-1 md:flex-initial sm:w-auto justify-center bg-primary dark:bg-secondary-dark text-white rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
-        >
-          <LinkedIn class="size-5" />
-          LinkedIn
-        </a>
-      </footer>
     </div>
   </div>
 </section>
