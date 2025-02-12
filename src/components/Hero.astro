@@ -2,6 +2,7 @@
 import Email from "./icons/Email.astro";
 import LinkedIn from "./icons/LinkedIn.astro";
 import { getI18N } from "../i18n/";
+import Typing from "./Typing.astro";
 
 const { currentLocale } = Astro;
 const translate = getI18N({ currentLocale });
@@ -19,6 +20,7 @@ const translate = getI18N({ currentLocale });
       fetchpriority="high"
       data-aos="zoom-in"
       data-aos-duration="500"
+      data-aos-delay="50"
     />
 
     <div>
@@ -26,7 +28,7 @@ const translate = getI18N({ currentLocale });
         <div
           class="flex flex-col text-center sm:text-left"
           data-aos="zoom-in"
-          data-aos-delay="100"
+          data-aos-delay="150"
           data-aos-duration="500"
         >
           <h1
@@ -34,11 +36,11 @@ const translate = getI18N({ currentLocale });
           >
             Javier Martín Serrano
           </h1>
-          <h2
+          <div
             class="text-2xl font-semibold text-yellow-500 dark:text-yellow-400"
           >
-            {translate.HERO.ROL}
-          </h2>
+            <Typing text={translate.HERO.ROL} />
+          </div>
         </div>
       </header>
 
@@ -46,7 +48,7 @@ const translate = getI18N({ currentLocale });
         <p
           class="text-pretty text-lg text-secondary dark:text-white"
           data-aos="zoom-in"
-          data-aos-delay="200"
+          data-aos-delay="250"
           data-aos-duration="500"
         >
           {translate.HERO.DESCRIPTION}
@@ -55,7 +57,7 @@ const translate = getI18N({ currentLocale });
         <footer
           class="flex flex-wrap items-center gap-3 pt-8 justify-center md:justify-normal"
           data-aos="zoom-in"
-          data-aos-delay="300"
+          data-aos-delay="350"
           data-aos-duration="500"
         >
           <a
@@ -68,7 +70,7 @@ const translate = getI18N({ currentLocale });
           <a
             href="https://www.linkedin.com/in/javier-martin-serrano/"
             target="_blank"
-            class="flex-1 md:flex-initial sm:w-auto justify-center bg-white dark:bg-secondary-dark text-secondary dark:text-white border border-secondary rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
+            class="flex-1 md:flex-initial sm:w-auto justify-center bg-white dark:bg-secondary-dark text-secondary dark:text-white border border-secondary dark:border-secondary-dark rounded-md p-2 px-4 inline-flex items-center gap-2 transition duration-300 transform hover:scale-105 will-change-transform"
           >
             <LinkedIn class="size-5" />
             LinkedIn

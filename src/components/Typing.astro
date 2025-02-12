@@ -1,0 +1,40 @@
+<div class="typewriter">
+  <h2>Desarrollador full stack</h2>
+</div>
+
+<style>
+  .typewriter {
+    width: fit-content;
+  }
+  .typewriter h2 {
+    overflow: hidden;
+    border-right: 2px solid transparent;
+    white-space: nowrap;
+    animation:
+      typing 2s steps(28, end),
+      blink-caret 1150ms step-end infinite;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    0%,
+    100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #eab308;
+    }
+    100% {
+      width: 0;
+    }
+  }
+</style>
