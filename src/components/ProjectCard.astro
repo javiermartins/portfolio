@@ -42,10 +42,10 @@ const projectDescription = translate[namespace][key];
 >
   <div class="w-full h-full rounded-t-xl overflow-hidden">
     <img
-      alt={project.title}
+      src={project.image}
+      alt=""
       class="w-full h-56 object-cover transition duration-500 group-hover:scale-105"
       loading="lazy"
-      src={project.image}
     />
   </div>
   <div class="p-5 flex flex-col h-full">
@@ -58,12 +58,13 @@ const projectDescription = translate[namespace][key];
     </div>
 
     <footer class="flex flex-wrap mt-4">
-      <ul class="flex flex-row mb-2 gap-x-2">
+      <ul class="flex flex-row mb-2 gap-x-2"
+      aria-label={translate.COMMON.TOOLSUSED} role="list">
         {
           project.tags.map((tag) => (
-            <li class="tags">
+            <li class="tags" aria-label={tag.name}>
               <span class="flex justify-center items-center p-2 grayscale hover:grayscale-0 transition duration-300 select-none bg-gray-300 rounded-full">
-                <tag.icon class="size-7" />
+                <tag.icon class="size-7" aria-hidden="true" />
               </span>
               <span class="tooltip-tag text-white bg-primary">{tag.name}</span>
             </li>

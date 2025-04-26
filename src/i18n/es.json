@@ -6,7 +6,8 @@
         "OTHERPROJECTS": "Otros proyectos",
         "CHANGETHEME": "Cambiar tema",
         "CHANGELANGUAGE": "Cambiar idioma",
-        "GITHUBRESPOSITORY": "Respositorio de github de"
+        "GITHUBRESPOSITORY": "Respositorio de github de",
+        "TOOLSUSED": "Herramientas utilizadas en el proyecto"
     },
     "HERO": {
         "ROL": "Desarrollador Full Stack",

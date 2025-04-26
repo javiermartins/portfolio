@@ -33,13 +33,23 @@ const languages = languagesData;
             <li
               class="translate-menu-option cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm"
               class:list={{
-                "font-extrabold bg-neutral-300/30":
+                "font-extrabold bg-neutral-300/30 hover:bg-neutral-300/30":
                   language.value === currentLocale,
               }}
             >
-              <a href={language.url} class="block h-full w-full px-2 py-1.5">
-                {translateLanguage}
-              </a>
+              {language.value === currentLocale ? (
+                <span
+                  class="block h-full w-full px-2 py-1.5"
+                  aria-current="page"
+                  tabindex="0"
+                >
+                  {translateLanguage}
+                </span>
+              ) : (
+                <a href={language.url} class="block h-full w-full px-2 py-1.5">
+                  {translateLanguage}
+                </a>
+              )}
             </li>
           );
         })
